@@ -3,7 +3,7 @@
 
 import multiprocessing as mp
 from random import randint
-from ice.secp256k1 import (
+from secp256k1 import (
 	scalar_multiplication as SM,
 	Fill_in_bloom as BL,
 	pub2upub as p2u,
@@ -28,7 +28,7 @@ class Proc:
 			pa = PA(self.P, R)
 			ps = PS(self.P, R)
 			p.append(pa), p.append(ps), self.D.append(r)
-		self._bits, self._hashes, self._bf = BL(p, 0.000001)
+		self._bits, self._hashes, self._bf, _, _ = BL(p, 0.000001)
 		del p
 
 	def found(self, x1, x2):
