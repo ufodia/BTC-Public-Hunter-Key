@@ -10,7 +10,7 @@ USEGE :
 from argparse import ArgumentParser
 import multiprocessing as MP
 from random import randint
-from ice.secp256k1 import (
+from secp256k1 import (
     b58_decode as b58,
     privatekey_to_h160 as p2h,
     privatekey_loop_h160_sse as loop)
